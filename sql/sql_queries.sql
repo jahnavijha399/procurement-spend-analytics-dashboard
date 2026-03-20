@@ -18,3 +18,34 @@ sum(Amount) as Total_Spend
 from procurement
 group by Vendor_Name
 order by Total_Spend desc;
+
+SELECT Category,
+SUM(Amount) AS Total_Spend
+FROM procurement
+GROUP BY Category
+ORDER BY Total_Spend DESC;
+
+SELECT Month,
+SUM(Amount) as Monthly_Spend
+FROM procurement
+group by Month
+order by Month;
+
+SELECT Vendor_Name,
+SUM(Amount) as Total_Spend
+FROM procurement
+GROUP BY Vendor_Name
+order by Total_Spend DESC
+LIMIT 10;
+
+SELECT Department,
+SUM(Amount) AS Total_Spend
+FROM procurement
+GROUP BY Department
+ORDER BY Total_Spend DESC;
+
+SELECT Invoice_ID,
+COUNT(*) AS Duplicate_Count
+FROM procurement
+GROUP BY Invoice_ID
+HAVING COUNT(*) > 1;
